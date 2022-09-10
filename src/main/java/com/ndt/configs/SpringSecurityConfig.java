@@ -5,12 +5,6 @@
  */
 package com.ndt.configs;
 
-/**
- *
- * @author TUN
- */
-import com.ndt.handlers.LoginHandler;
-import com.ndt.handlers.LogoutHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -24,6 +18,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import com.ndt.configs.handlers.LoginHandler;
+import com.ndt.configs.handlers.LogoutHandler;
 /**
  *
  * @author admin
@@ -74,7 +71,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.exceptionHandling().accessDeniedPage("/login?accessDenied=true");
 
-        http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')");
+        //http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')");
 
         http.csrf().disable();
         

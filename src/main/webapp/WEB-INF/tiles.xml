@@ -39,4 +39,27 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="content"
                        value="/WEB-INF/jsp/hoidong.jsp" />
     </definition>
+
+
+
+
+    <definition name="adminLayout"
+                template="/WEB-INF/layout/admin/base.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header"
+                       value="/WEB-INF/layout/admin/header.jsp" />
+        <put-attribute name="content" value="BASE" />
+        <put-attribute name="footer"
+                       value="/WEB-INF/layout/admin/footer.jsp" />
+    </definition>
+    <definition name="adminIndex" extends="adminLayout">
+        <put-attribute name="title" value="Trang quản trị" />
+        <put-attribute name="content"
+                       value="/WEB-INF/jsp/admin/index.jsp" />
+    </definition>
+    <definition name="user-manager" extends="adminLayout">
+        <put-attribute name="title" value="Quản lý tài khoản" />
+        <put-attribute name="content"
+                       value="/WEB-INF/jsp/admin/user-manager.jsp" />
+    </definition>
 </tiles-definitions>

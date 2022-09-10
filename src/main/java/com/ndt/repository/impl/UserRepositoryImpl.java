@@ -62,6 +62,24 @@ public class UserRepositoryImpl implements UserRepository{
         return q.getResultList();
     }
 
+    @Override
+    public List<User> getUsers() {
+        // Get user using hql
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        Query q = session.createQuery("from User");
+        return q.getResultList();
+    }
+
+    @Override
+    public User updateRoleUser(String role, int id) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        User user = session.get(User.class, id);
+        user.setUserRole(role);
+        session.update(user);
+        return user;
+    }
+
+
 //    @Override
 //    public User getUserByUsername(String username) {
 //        Session session = this.sessionFactory.getObject().getCurrentSession();

@@ -5,9 +5,12 @@
  */
 package com.ndt.configs;
 
+import javax.ejb.TransactionManagement;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -21,8 +24,11 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @Configuration
 @EnableWebMvc
+@EnableTransactionManagement
 @ComponentScan( basePackages = {
-    "com.ndt.controllers"
+    "com.ndt.controllers",
+    "com.ndt.service",
+    "com.ndt.repository",
 })
 public class WebApplicationContextConfig implements WebMvcConfigurer {
 

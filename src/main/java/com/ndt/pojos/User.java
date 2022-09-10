@@ -24,6 +24,8 @@ import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  *
  * @author TUN
@@ -65,12 +67,15 @@ public class User implements Serializable {
     @Column(name = "user_role")
     private String userRole;
     @OneToMany(mappedBy = "sinvienId")
+    @JsonIgnore
     private List<Danhgia> danhgiaList;
     @JoinColumn(name = "hoidong_id", referencedColumnName = "id")
     @ManyToOne
+    @JsonIgnore
     private Hoidong hoidongId;
     @JoinColumn(name = "khoaluan_id", referencedColumnName = "id")
     @ManyToOne
+    @JsonIgnore
     private Khoaluan khoaluanId;
     @Transient
     private String confirmPassword;
