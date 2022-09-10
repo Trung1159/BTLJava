@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache
+Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="baseLayout"
+                template="/WEB-INF/layout/base.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header"
+                       value="/WEB-INF/layout/header.jsp" />
+        <put-attribute name="content" value="BASE" />
+        <put-attribute name="footer"
+                       value="/WEB-INF/layout/footer.jsp" />
+    </definition>
+    <definition name="index" extends="baseLayout">
+        <put-attribute name="title" value="Home page" />
+        <put-attribute name="content"
+                       value="/WEB-INF/jsp/index.jsp" />
+    </definition>
+    <definition name="login" extends="baseLayout">
+        <put-attribute name="title" value="Sign in" />
+        <put-attribute name="content"
+                       value="/WEB-INF/jsp/login.jsp" />
+    </definition>
+    <definition name="register" extends="baseLayout">
+        <put-attribute name="title" value="Sign up" />
+        <put-attribute name="content"
+                       value="/WEB-INF/jsp/register.jsp" />
+    </definition>
+    <definition name="khoaluans" extends="baseLayout">
+        <put-attribute name="title" value="QLKL" />
+        <put-attribute name="content"
+                       value="/WEB-INF/jsp/khoaluans.jsp" />
+    </definition>
+    <definition name="hoidong" extends="baseLayout">
+        <put-attribute name="title" value="QLHD" />
+        <put-attribute name="content"
+                       value="/WEB-INF/jsp/hoidong.jsp" />
+    </definition>
+</tiles-definitions>
